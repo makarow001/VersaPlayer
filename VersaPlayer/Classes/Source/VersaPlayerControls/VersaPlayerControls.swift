@@ -360,7 +360,7 @@ open class VersaPlayerControls: View {
         handler.isSeeking = true
         let value = Double(sender.value)
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        handler.player.seek(to: time)
+        handler.player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
         behaviour.update(with: time.seconds)
     }
     
